@@ -1,7 +1,7 @@
 ---
 title: MedPulse
 home: true
-heroImage: /images/med-pulse.png
+heroImage: /images/med-pulse.jpg
 heroImageDark: /images/house.png
 heroText: MedPulse · 知脉医疗
 tagline: 多智能体医疗引擎：记忆、识图、检索、图谱推理、数据查询一体化调度
