@@ -24,7 +24,7 @@ export default defineUserConfig({
                     text: "文档搭建",
                     children: [
                         {
-                            text: "VuePress 入门",
+                            text: "VuePress 教程",
                             link: "index.md"
                         },
                     ]
