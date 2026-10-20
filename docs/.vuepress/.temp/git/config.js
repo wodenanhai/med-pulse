@@ -1,5 +1,5 @@
-import { GitContributors } from "/Users/zhangcheng/Desktop/oranges/orange-docs/node_modules/@vuepress/plugin-git/dist/client/components/GitContributors.js";
-import { GitChangelog } from "/Users/zhangcheng/Desktop/oranges/orange-docs/node_modules/@vuepress/plugin-git/dist/client/components/GitChangelog.js";
+import { GitContributors } from "/Users/zhangcheng/Desktop/med-pulse/node_modules/@vuepress/plugin-git/dist/client/components/GitContributors.js";
+import { GitChangelog } from "/Users/zhangcheng/Desktop/med-pulse/node_modules/@vuepress/plugin-git/dist/client/components/GitChangelog.js";
 
 export default {
   enhance: ({ app }) => {
