@@ -44,9 +44,16 @@ export default defineUserConfig({
                             link: "docker.md"
                         },
                         {
-                            text: "数据库",
+                            text: "五、数据库",
                             link: "db.md"
                         },
+                        {
+                            text:"六、数据集",
+                            link:"data.md"
+                        },{
+                            text:"七、PostgreSQL表结构",
+                            link:"PostgreSQL.md"
+                        }
                     ]
                 }
             ],
