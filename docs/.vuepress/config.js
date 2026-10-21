@@ -14,11 +14,26 @@ export default defineUserConfig({
         colorMode: 'auto',
         navbar: [
             {
+                text: "项目",
+                link: '/med_pulse/index'
+            },
+            {
                 text: "工具库",
                 link: '/tools/index'
             },
         ],
         sidebar: {
+            '/med_pulse/': [
+                {
+                    text: "知脉",
+                    children: [
+                        {
+                            text: "项目简介",
+                            link: "index.md"
+                        },
+                    ]
+                }
+            ],
             '/tools/': [
                 {
                     text: "文档搭建",
