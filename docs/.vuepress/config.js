@@ -28,8 +28,16 @@ export default defineUserConfig({
                     text: "知脉",
                     children: [
                         {
-                            text: "项目简介",
+                            text: "一、项目简介",
                             link: "index.md"
+                        },
+                        {
+                            text: "二、项目初始化",
+                            link: "init.md"
+                        },
+                        {
+                            text: "conda",
+                            link: "conda.md"
                         },
                         {
                             text: "Docker部署",
