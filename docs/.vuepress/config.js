@@ -36,11 +36,11 @@ export default defineUserConfig({
                             link: "init.md"
                         },
                         {
-                            text: "conda",
+                            text: "三、Conda隔离环境",
                             link: "conda.md"
                         },
                         {
-                            text: "Docker部署",
+                            text: "四、Docker部署服务",
                             link: "docker.md"
                         },
                         {

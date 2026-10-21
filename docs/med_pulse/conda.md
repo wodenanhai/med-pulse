@@ -550,7 +550,10 @@ conda env export --from-history > environment.yml
 # 6.安装依赖
 pip install -r requirements.txt
 
-python -m pip install -r requirements.txt(当前环境的pip，不是全局的pip)     
+python -m pip install -r requirements.txt(当前环境的pip，不是全局的pip)
+
+# 冻结依赖
+pip freeze > requirements.txt
 ```
 
 **核心原则：一个项目一个环境；先确认环境，再安装依赖；通过环境文件记录项目需要的依赖。**
