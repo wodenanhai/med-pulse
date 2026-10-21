@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="generator" content="VuePress 2.0.0-rc.28" />
+    <style>
+      :root {
+        --vp-c-bg: #fff;
+      }
+
+      [data-theme='dark'] {
+        --vp-c-bg: #1b1b1f;
+      }
+
+      html,
+      body {
+        background-color: var(--vp-c-bg);
+      }
+    </style>
+    <script>
+      const useChoice = localStorage.getItem('vuepress-color-scheme')
+      const systemStatus =
+        'matchMedia' in window
+          ? window.matchMedia('(prefers-color-scheme: dark)').matches
+          : false
+
+      if (useChoice === 'light') {
+        document.documentElement.dataset.theme = 'light'
+      } else if (useChoice === 'dark' || systemStatus) {
+        document.documentElement.dataset.theme = 'dark'
+      }
+    </script>
+    <link rel="icon" href="/med-pulse/images/house.png"><title>《天宫医疗》 | 知脉医疗</title><meta name="description" content="面向前端成长的面试知识库、工具沉淀与 Node 实战指南">
+    <link rel="preload" href="/med-pulse/assets/style-C7L12rcI.css" as="style"><link rel="stylesheet" href="/med-pulse/assets/style-C7L12rcI.css">
+    <link rel="modulepreload" href="/med-pulse/assets/app-C9b2Di87.js"><link rel="modulepreload" href="/med-pulse/assets/med_pulse-BYbEhtxR.js">
+    <link rel="prefetch" href="/med-pulse/assets/README-EAAlmKMX.js" as="script"><link rel="prefetch" href="/med-pulse/assets/tools-CnWrB4wR.js" as="script"><link rel="prefetch" href="/med-pulse/assets/404.html-BHx5SfKc.js" as="script">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="vp-theme-container no-sidebar external-link-icon" vp-container><!--[--><header class="vp-navbar" vp-navbar><div class="vp-toggle-sidebar-button" title="toggle sidebar" aria-expanded="false" role="button" tabindex="0"><div class="icon" aria-hidden="true"><span></span><span></span><span></span></div></div><span><a class="route-link" href="/med-pulse/"><img class="vp-site-logo" src="/med-pulse/images/house.png" alt="知脉医疗"><span class="vp-site-name vp-hide-mobile" aria-hidden="true">知脉医疗</span></a></span><div class="vp-navbar-items-wrapper" style=""><!--[--><!--]--><nav class="vp-navbar-items vp-hide-mobile" aria-label="site navigation"><!--[--><div class="vp-navbar-item"><a class="route-link auto-link" href="/med-pulse/tools/" aria-label="工具库"><!--[--><!--[--><!--]--><!--]-->工具库<!--[--><!--[--><!--]--><!--]--></a></div><!--]--></nav><!--[--><!--]--><button type="button" class="vp-toggle-color-mode-button" title="toggle color mode"><svg class="light-icon" viewbox="0 0 32 32" style=""><path d="M16 12.005a4 4 0 1 1-4 4a4.005 4.005 0 0 1 4-4m0-2a6 6 0 1 0 6 6a6 6 0 0 0-6-6z" fill="currentColor"></path><path d="M5.394 6.813l1.414-1.415l3.506 3.506L8.9 10.318z" fill="currentColor"></path><path d="M2 15.005h5v2H2z" fill="currentColor"></path><path d="M5.394 25.197L8.9 21.691l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 25.005h2v5h-2z" fill="currentColor"></path><path d="M21.687 23.106l1.414-1.415l3.506 3.506l-1.414 1.414z" fill="currentColor"></path><path d="M25 15.005h5v2h-5z" fill="currentColor"></path><path d="M21.687 8.904l3.506-3.506l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 2.005h2v5h-2z" fill="currentColor"></path></svg><svg class="dark-icon" viewbox="0 0 32 32" style="display:none;"><path d="M13.502 5.414a15.075 15.075 0 0 0 11.594 18.194a11.113 11.113 0 0 1-7.975 3.39c-.138 0-.278.005-.418 0a11.094 11.094 0 0 1-3.2-21.584M14.98 3a1.002 1.002 0 0 0-.175.016a13.096 13.096 0 0 0 1.825 25.981c.164.006.328 0 .49 0a13.072 13.072 0 0 0 10.703-5.555a1.01 1.01 0 0 0-.783-1.565A13.08 13.08 0 0 1 15.89 4.38A1.015 1.015 0 0 0 14.98 3z" fill="currentColor"></path></svg></button><!----></div></header><!--]--><div class="vp-sidebar-mask"></div><!--[--><aside class="vp-sidebar" vp-sidebar><nav class="vp-navbar-items" aria-label="site navigation"><!--[--><div class="vp-navbar-item"><a class="route-link auto-link" href="/med-pulse/tools/" aria-label="工具库"><!--[--><!--[--><!--]--><!--]-->工具库<!--[--><!--[--><!--]--><!--]--></a></div><!--]--></nav><!--[--><!--]--><!----><!--[--><!--]--></aside><!--]--><!--[--><main class="vp-page"><!--[--><!--]--><div vp-content><!--[--><!--]--><div id="content"><h1 id="《天宫医疗》" tabindex="-1"><a class="header-anchor" href="#《天宫医疗》"><span>《天宫医疗》</span></a></h1><h2 id="项目背景" tabindex="-1"><a class="header-anchor" href="#项目背景"><span>项目背景：</span></a></h2><p>想象你是一家三甲医院的信息科负责人。每天，门诊医生要查药品说明书、检验科要解读化验单、药剂科要检查处方冲突、患者打电话来问 &quot;我这个症状该挂什么科&quot;。这些信息散落在不同系统里 —— 药品数据在 HIS 系统、疾病知识在医学百科、检查报告在 PACS 系统、患者历史在电子病历里。</p><p>我们要构建一个医疗智能体，把这些数据统一起来，让 AI 能够跨系统回答问题。</p><h1 id="技术角度" tabindex="-1"><a class="header-anchor" href="#技术角度"><span>技术角度</span></a></h1><p>从技术角度，医疗是ai落地最有价值，也是最有挑战性的领域之一，它天然包含了AI应用几乎所有技术难点</p><p>业务痛点 对应技术挑战 患者描述模糊，需多轮引导 多轮对话 + 短期记忆 报告 / 影像需要理解图文 视觉语言模型（VLM） 医学知识专业且分散 RAG 知识库检索 药物关系复杂，存在多跳依赖 知识图谱 + 图推理 运营人员不会写 SQL NL2SQL Agent 患者历史记录需跨会话记忆 长期记忆（向量数据库）</p><p>用医疗场景学 AI 框架，每一个技术点都有真实的业务动机，不是为了用技术而用技术。</p><h1 id="核心用户角色" tabindex="-1"><a class="header-anchor" href="#核心用户角色"><span>核心用户角色</span></a></h1><p>项目包含三类用户进行使用：</p><ol><li>患者 / 普通用户：症状自查、报告解读、用药咨询、健康科普</li><li>医生 / 临床医生：辅助诊断、药物交互检测、影像分析、文献检索</li><li>医院管理 / 运营：数据查询、运营统计、患者画像、系统监控</li></ol><p>中转站：https://www.vibeapi.cn/console/token</p></div><!--[--><!--]--></div><footer class="vp-page-meta"><!----><div class="vp-meta-item git-info"><!----><!----></div></footer><!----><!--[--><!--]--></main><!--]--></div><!--[--><!----><!--]--><!--]--></div>
+    <script type="module" src="/med-pulse/assets/app-C9b2Di87.js" defer></script>
+  </body>
+</html>
