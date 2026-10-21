@@ -30,3 +30,31 @@ RETURN drug.name AS 药品,other.name AS 其他疾病
 LIMIT 20
 ```
 ## 聚合统计
+哪个科室的疾病最多？
+``` postgresql
+MATCH (d:Disease)-[:BELONGS_TO]->(dep:Department)
+RETURN dep.name AS 科室,count(d) AS 疾病数量
+ORDER BY 疾病数量 DESC 
+LIMIT 10
+```
+症状最多的10种疾病
+``` postgresql
+MATCH (d:Disease)-[:HAS_SYMPTOM]->(s:Symptom)
+RETURN d.name AS 疾病,count(s) AS 症状数量
+ORDER BY 症状数量 DESC
+LIMIT 10
+```
+## 路径查询
+找糖尿病和高血压之间的最短路径
+``` postgresql
+MATCH path=shortestPath(
+(a:Disease {name:"糖尿病"})-[*]-(b:Disease {name:"高血压"})
+)
+RETURN path
+```
+找出所有长度<=3的路径
+``` postgresql
+MATCH path = (a:Disease {name:"糖尿病"})-[*1..3]-(b)
+RETURN path
+LIMIT 20
+```
