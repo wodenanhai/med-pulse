@@ -31,6 +31,10 @@ export default defineUserConfig({
                             text: "项目简介",
                             link: "index.md"
                         },
+                        {
+                            text: "Docker部分",
+                            link: "docker.md"
+                        },
                     ]
                 }
             ],
