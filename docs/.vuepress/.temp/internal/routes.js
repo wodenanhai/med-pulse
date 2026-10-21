@@ -11,6 +11,7 @@ export const routes = Object.fromEntries([
   ["/med_pulse/", { loader: () => import(/* webpackChunkName: "med_pulse_index.html" */"/Users/zhangcheng/Desktop/med-pulse/docs/med_pulse/index.md"), meta: {"title":""} }],
   ["/med_pulse/init.html", { loader: () => import(/* webpackChunkName: "med_pulse_init.html" */"/Users/zhangcheng/Desktop/med-pulse/docs/med_pulse/init.md"), meta: {"title":""} }],
   ["/404.html", { loader: () => import(/* webpackChunkName: "404.html" */"/Users/zhangcheng/Desktop/med-pulse/docs/.vuepress/.temp/pages/404.html.vue"), meta: {"title":""} }],
+  ["/med_pulse/Neo4j.html", { loader: () => import(/* webpackChunkName: "med_pulse_Neo4j.html" */"/Users/zhangcheng/Desktop/med-pulse/docs/med_pulse/Neo4j.md"), meta: {"title":""} }],
 ]);
 
 if (import.meta.webpackHot) {

@@ -53,6 +53,9 @@ export default defineUserConfig({
                         },{
                             text:"七、PostgreSQL表结构",
                             link:"PostgreSQL.md"
+                        },{
+                            text:"八、Neo4j",
+                            link:"Neo4j.md"
                         }
                     ]
                 }
