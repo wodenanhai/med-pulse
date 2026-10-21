@@ -533,7 +533,7 @@ demo_project/
 
 ``` bash
 # 1. 创建项目环境
-conda create -n 项目名 python=3.11
+conda create -n 项目名 python=3.13
 
 # 2. 激活环境
 conda activate 项目名
@@ -546,6 +546,11 @@ python 你的脚本.py
 
 # 5. 导出环境依赖
 conda env export --from-history > environment.yml
+
+# 6.安装依赖
+pip install -r requirements.txt
+
+python -m pip install -r requirements.txt(当前环境的pip，不是全局的pip)     
 ```
 
 **核心原则：一个项目一个环境；先确认环境，再安装依赖；通过环境文件记录项目需要的依赖。**
