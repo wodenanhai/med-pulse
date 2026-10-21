@@ -56,6 +56,9 @@ export default defineUserConfig({
                         },{
                             text:"八、Neo4j",
                             link:"Neo4j.md"
+                        },{
+                            text:"九、Cypher查询",
+                            link:"Cypher.md"
                         }
                     ]
                 }
