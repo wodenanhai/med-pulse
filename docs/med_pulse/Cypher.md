@@ -161,3 +161,6 @@ with driver.session() as session:
         if result.single()["deleted"] == 0:
             break
 ```
+## 项目用法
++ 固定业务：提前写好Cypher
++ 动态业务（大模型写）：NL2SQL  NL2Cypher
