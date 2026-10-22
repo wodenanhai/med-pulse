@@ -58,3 +58,106 @@ MATCH path = (a:Disease {name:"糖尿病"})-[*1..3]-(b)
 RETURN path
 LIMIT 20
 ```
+## 写入操作
+``` postgresql
+#创建节点
+CREATE (d:Disease {name:"测试疾病",description:"这是一个测试疾病"})
+
+#幂等创建，存在则跳过，不存在则创建（推荐）
+MERGE (d:Disease {name:"糖尿病222"})
+
+#创建关系
+MATCH (d:Disease {name:"糖尿病"}),(dep:Department {name:"内分泌科"})
+MERGE (d)-[:BELONGS_TO]->(dep)
+
+#更新属性
+MATCH (d:Disease {name:"糖尿病"})
+SET d.description="更新后的描述"
+
+#删除节点（必须先删除关系）
+MATCH (d:Disease {name:"测试疾病"})
+DETACH DELETE d        --DETACH 会自动删除该节点的所有关系
+```
+## 大批量分批删除
+``` postgresql
+MATCH (n) WITH n LIMIT 5000 DETACH DELETE n
+```
+
+## 操作
+``` postgresql
+from neo4j import GraphDatabase
+driver = GraphDatabase.driver("bolt://localhost:7687", auth=("neo4j", "medical123"))
+
+driver.verify_connectivity()
+print("连接成功")
+
+driver.close()
+print("连接已关闭")
+
+def get_disease_symptoms(driver,disease_name:str)->list[str]:
+    with driver.session() as session:
+        result = session.run(
+            """
+            MATCH (disease:Disease {name: $name})-[:HAS_SYMPTOM]->(s:Symptom)
+            RETURN s.name AS symptom
+            """,
+            name=disease_name
+        )
+        return [record["symptom"] for record in result]
+
+symptoms = get_disease_symptoms(driver,"糖尿病")
+print(symptoms)
+
+def add_disease(driver,name:str,description:str):
+    """新增一个疾病节点"""
+    with driver.session() as session:
+        session.run(
+            """
+            MERGE (d:Disease {name: $name})
+            SET d.description = $description
+            """,
+            name=name,
+            description=description
+        )
+add_disease(driver,"糖尿病","一种长期的慢性疾病，由身体内糖分的代谢异常导致。")
+
+def batch_create_symptoms(driver,symptom_names:list[str]):
+    """批量创建症状节点"""
+    def _create(tx,names):
+        # UNWIND 把列表展开，每个元素执行一次MERGE
+        tx.run(
+            "UNWIND $names AS name MERGE (s:Symptom {name: name})",
+            names=names
+        )
+    with driver.session() as session:
+        # execute_write 自动处理事务提交和回滚
+        session.execute_write(_create,symptom_names)
+batch_create_symptoms(driver,["头痛","头痛","头痛"])
+
+with driver.session() as session:
+    result = session.run(
+        """
+        MATCH (d:Disease {name:$name})-[r]->(n)
+        RETURN type(r) AS rel_type,n.name AS target,labels(n)[0] AS target_label
+        """,
+        name="糖尿病"
+    )
+    for record in result:
+        # 通过键名访问
+        print(record["rel_type"],"->",record["target"])
+        # 转成字典
+        row = record.data()
+        print(row)
+    
+    #一次性取出所有结果
+    all_records = result.data()
+    
+#分批删除
+with driver.session() as session:
+    while True:
+        result = session.run(
+            "MATCH (n) WITH n LIMIT 5000 DETACH DELETE n RETURN count(*) AS deleted"
+        )
+        if result.single()["deleted"] == 0:
+            break
+```
