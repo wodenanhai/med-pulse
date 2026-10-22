@@ -59,6 +59,9 @@ export default defineUserConfig({
                         },{
                             text:"九、Cypher查询",
                             link:"Cypher.md"
+                        },{
+                            text:"十、短期记忆",
+                            link:"checkpointer.md"
                         }
                     ]
                 }
