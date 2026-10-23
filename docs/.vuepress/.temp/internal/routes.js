@@ -13,6 +13,7 @@ export const routes = Object.fromEntries([
   ["/med_pulse/docker.html", { loader: () => import(/* webpackChunkName: "med_pulse_docker.html" */"/Users/zhangcheng/Desktop/med-pulse/docs/med_pulse/docker.md"), meta: {"title":""} }],
   ["/med_pulse/", { loader: () => import(/* webpackChunkName: "med_pulse_index.html" */"/Users/zhangcheng/Desktop/med-pulse/docs/med_pulse/index.md"), meta: {"title":""} }],
   ["/med_pulse/init.html", { loader: () => import(/* webpackChunkName: "med_pulse_init.html" */"/Users/zhangcheng/Desktop/med-pulse/docs/med_pulse/init.md"), meta: {"title":""} }],
+  ["/med_pulse/state.html", { loader: () => import(/* webpackChunkName: "med_pulse_state.html" */"/Users/zhangcheng/Desktop/med-pulse/docs/med_pulse/state.md"), meta: {"title":""} }],
   ["/404.html", { loader: () => import(/* webpackChunkName: "404.html" */"/Users/zhangcheng/Desktop/med-pulse/docs/.vuepress/.temp/pages/404.html.vue"), meta: {"title":""} }],
 ]);
 

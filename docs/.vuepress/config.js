@@ -62,6 +62,9 @@ export default defineUserConfig({
                         },{
                             text:"十、短期记忆",
                             link:"checkpointer.md"
+                        },{
+                            text:"十一、状态机",
+                            link:"state.md"
                         }
                     ]
                 }
